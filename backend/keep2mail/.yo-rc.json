@@ -1,0 +1,50 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "br.com.basis.colatina.gcz.keep2"
+    },
+    "jhipsterVersion": "6.9.1",
+    "applicationType": "microservice",
+    "baseName": "keep2mail",
+    "packageName": "br.com.basis.colatina.gcz.keep2",
+    "packageFolder": "br/com/basis/colatina/gcz/keep2",
+    "serverPort": "8083",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "no",
+    "devDatabaseType": "no",
+    "prodDatabaseType": "no",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZWY3ZDgxNmQ0OWI1NTlkMzNiNzUxYTBiZjIwYTY1ODg3ZWQyYjU2ZWNjMThkZDk3OWU0MTZjNWNjZDY1ZTk3Nzg5ZDU3YjJjZjIwZTFmMDEwMWZmMmQyNjgyM2VlNDQ1NzE3Zjc4OWE3Y2E3OWQ2YWRiOGYzYjcwYmNkNWVhOTA=",
+    "embeddableLaunchScript": false,
+    "userDetailsResource": false,
+    "microserviceStackType": "SpringCloud",
+    "creationTimestamp": 1636495308879,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-nuvem-java",
+        "version": "6.10.4"
+      }
+    ],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [
+      {
+        "name": "generator-jhipster-nuvem-java",
+        "version": "6.10.4"
+      }
+    ],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

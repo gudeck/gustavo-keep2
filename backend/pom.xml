@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>keep2mail</module>
         <module>keep2batch</module>
         <module>keep2service</module>
     </modules>
