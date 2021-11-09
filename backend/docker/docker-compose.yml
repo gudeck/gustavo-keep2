@@ -1,0 +1,24 @@
+services:
+  keep2-elasticsearch:
+    extends:
+      file: container/elasticsearch.yml
+      service: keep2-elasticsearch
+    container_name: keep2-elasticsearch
+
+  keep2-postgresql:
+    extends:
+      file: container/postgresql.yml
+      service: keep2-postgresql
+    container_name: keep2-postgresql
+
+  keep2-jhipster-registry:
+    extends:
+      file: container/jhipster-registry.yml
+      service: keep2-jhipster-registry
+    container_name: keep2-jhipster-registry
+
+  keep2-redis:
+    extends:
+      file: container/redis.yml
+      service: keep2-redis
+    container_name: keep2-redis
