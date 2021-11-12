@@ -22,3 +22,9 @@ services:
       file: container/redis.yml
       service: keep2-redis
     container_name: keep2-redis
+
+  keep2-rabbitmq:
+    extends:
+      file: container/rabbitmq.yml
+      service: keep2-rabbitmq
+    container_name: keep2-rabbitmq
