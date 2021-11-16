@@ -13,7 +13,6 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 
 import static org.springframework.data.elasticsearch.annotations.DateFormat.date;
-import static org.springframework.data.elasticsearch.annotations.DateFormat.date_hour_minute_second;
 import static org.springframework.data.elasticsearch.annotations.FieldType.Date;
 
 @Getter
@@ -34,19 +33,15 @@ public class TarefaDocument {
 
     private String tipo;
 
-    @MultiField(mainField = @Field(type = Date, format = date_hour_minute_second),
-        otherFields = {@InnerField(suffix = "localDate", type = Date, format = date)})
-    private LocalDate dataInicioPrevista;
-
-    @MultiField(mainField = @Field(type = Date, format = date_hour_minute_second),
+    @MultiField(mainField = @Field(type = Date, format = date),
         otherFields = {@InnerField(suffix = "localDate", type = Date, format = date)})
     private LocalDate dataFimPrevista;
 
-    @MultiField(mainField = @Field(type = Date, format = date_hour_minute_second),
+    @MultiField(mainField = @Field(type = Date, format = date),
         otherFields = {@InnerField(suffix = "localDate", type = Date, format = date)})
     private LocalDate dataInicio;
 
-    @MultiField(mainField = @Field(type = Date, format = date_hour_minute_second),
+    @MultiField(mainField = @Field(type = Date, format = date),
         otherFields = {@InnerField(suffix = "localDate", type = Date, format = date)})
     private LocalDate dataFim;
 

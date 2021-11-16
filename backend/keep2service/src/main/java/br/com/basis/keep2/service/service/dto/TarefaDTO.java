@@ -1,5 +1,6 @@
 package br.com.basis.keep2.service.service.dto;
 
+import br.com.basis.keep2.service.domain.enumeration.Tipo;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,11 +14,8 @@ public class TarefaDTO {
     private Long idResponsavel;
     private String titulo;
     private String descricao;
-    private String tipo;
-    private LocalDate dataInicioPrevista;
+    private Tipo tipo;
     private LocalDate dataFimPrevista;
-    private Integer tempoPrevisto;
-    private Integer tempoGasto;
     private LocalDate dataInicio;
     private LocalDate dataFim;
 

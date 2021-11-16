@@ -26,16 +26,13 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column type="date" name="data_inicio_prevista">
+            <column type="varchar(31)" name="situacao">
                 <constraints nullable="false"/>
             </column>
 
             <column type="date" name="data_fim_prevista">
                 <constraints nullable="false"/>
             </column>
-
-            <column type="integer" name="tempo_previsto"/>
-            <column type="integer" name="tempo_gasto"/>
 
             <column type="date" name="data_inicio"/>
             <column type="date" name="data_fim"/>

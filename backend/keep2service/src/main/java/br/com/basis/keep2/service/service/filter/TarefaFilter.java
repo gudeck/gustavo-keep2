@@ -16,11 +16,9 @@ public class TarefaFilter implements BaseFilter {
     private String responsavel;
     private String titulo;
     private String tipo;
-    private String dataInicioPrevista;
     private String dataFimPrevista;
     private String dataInicio;
     private String dataFim;
-    private LocalDate dataInicioPrevistaPeriodo;
     private LocalDate dataFimPrevistaPeriodo;
     private LocalDate dataInicioPeriodo;
     private LocalDate dataFimPeriodo;
@@ -34,12 +32,9 @@ public class TarefaFilter implements BaseFilter {
         addMatchPhrase(boolQueryBuilder, "responsavel", responsavel);
         addMatchPhrase(boolQueryBuilder, "titulo", titulo);
         addMatchPhrase(boolQueryBuilder, "tipo", tipo);
-        addMatch(boolQueryBuilder, "dataInicioPrevista", dataInicioPrevista);
         addMatch(boolQueryBuilder, "dataFimPrevista", dataFimPrevista);
         addMatch(boolQueryBuilder, "dataInicio", dataInicio);
         addMatch(boolQueryBuilder, "dataFim", dataFim);
-        addRangeQuery(boolQueryBuilder, "dataInicioPrevista", dataInicioPrevistaPeriodo, defaultIfNull(dataFimPrevistaPeriodo, maxDate));
-        addRangeQuery(boolQueryBuilder, "dataFimPrevista", defaultIfNull(dataInicioPrevistaPeriodo, minDate), dataFimPrevistaPeriodo);
         addRangeQuery(boolQueryBuilder, "dataInicio", dataInicioPeriodo, defaultIfNull(dataFimPeriodo, maxDate));
         addRangeQuery(boolQueryBuilder, "dataFim", defaultIfNull(dataInicioPeriodo, minDate), dataFimPeriodo);
         return boolQueryBuilder;

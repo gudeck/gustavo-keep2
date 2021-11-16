@@ -1,5 +1,7 @@
 package br.com.basis.keep2.service.domain;
 
+import br.com.basis.keep2.service.domain.enumeration.Situacao;
+import br.com.basis.keep2.service.domain.enumeration.Tipo;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,17 +37,13 @@ public class Tarefa {
     private String descricao;
 
     @Column(nullable = false)
-    private String tipo;
+    private Tipo tipo;
 
     @Column(nullable = false)
-    private LocalDate dataInicioPrevista;
+    private Situacao situacao = Situacao.ATRIBUIDA;
 
     @Column(nullable = false)
     private LocalDate dataFimPrevista;
-
-    private Integer tempoPrevisto;
-
-    private Integer tempoGasto;
 
     private LocalDate dataInicio;
 

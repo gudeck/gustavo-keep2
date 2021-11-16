@@ -20,6 +20,7 @@ public class ResponsavelService {
 
     private final ApplicationEventPublisher applicationEventPublisher;
 
+    @Transactional
     public void deleteById(Long idResponsavel) {
         responsavelRepository.deleteById(idResponsavel);
         applicationEventPublisher.publishEvent(new ResponsavelEvent(idResponsavel));
@@ -32,6 +33,7 @@ public class ResponsavelService {
             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "registro.nao-encontrado"));
     }
 
+    @Transactional
     public ResponsavelDTO save(ResponsavelDTO responsavelDTO) {
         var responsavel = responsavelRepository.save(responsavelMapper.toEntity(responsavelDTO));
         applicationEventPublisher.publishEvent(new ResponsavelEvent(responsavel.getId()));

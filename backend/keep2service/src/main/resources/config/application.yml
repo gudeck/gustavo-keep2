@@ -163,6 +163,9 @@ spring:
   output:
     ansi:
       console-available: true
+  cloud:
+    stream:
+      source: mailProvider
 
 server:
   servlet:

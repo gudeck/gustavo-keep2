@@ -3,6 +3,7 @@ package br.com.basis.keep2.service.service;
 import br.com.basis.keep2.service.repository.TarefaRepository;
 import br.com.basis.keep2.service.service.dto.TarefaDTO;
 import br.com.basis.keep2.service.service.event.TarefaEvent;
+import br.com.basis.keep2.service.service.event.TarefaMailEvent;
 import br.com.basis.keep2.service.service.mapper.TarefaMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
@@ -20,14 +21,10 @@ public class TarefaService {
 
     private final ApplicationEventPublisher applicationEventPublisher;
 
+    @Transactional
     public void deleteById(Long idTarefa) {
         tarefaRepository.deleteById(idTarefa);
         applicationEventPublisher.publishEvent(new TarefaEvent(idTarefa));
-    }
-
-    @Transactional(readOnly = true)
-    public boolean existsById(Long idTarefa) {
-        return tarefaRepository.existsById(idTarefa);
     }
 
     @Transactional(readOnly = true)
@@ -37,9 +34,11 @@ public class TarefaService {
             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "registro.nao-encontrado"));
     }
 
+    @Transactional
     public TarefaDTO save(TarefaDTO tarefaDTO) {
         var tarefa = tarefaRepository.save(tarefaMapper.toEntity(tarefaDTO));
         applicationEventPublisher.publishEvent(new TarefaEvent(tarefa.getId()));
+        applicationEventPublisher.publishEvent(new TarefaMailEvent(tarefa.getId()));
         return tarefaMapper.toDto(tarefa);
     }
 

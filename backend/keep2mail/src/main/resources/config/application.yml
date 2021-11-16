@@ -134,6 +134,19 @@ spring:
   output:
     ansi:
       console-available: true
+  cloud:
+    stream:
+      function:
+        definition: mailConsumer
+      bindings:
+        mailConsumer-in-0:
+          group: keep2mail
+          destination: mailProvider-out-0
+      rabbit:
+        bindings:
+          mailConsumer-in-0:
+            consumer:
+              auto-bind-dlq: true
 
 server:
   servlet:
