@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -14,6 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import java.time.LocalDate;
 
+import static javax.persistence.EnumType.STRING;
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -36,9 +38,11 @@ public class Tarefa {
 
     private String descricao;
 
+    @Enumerated(STRING)
     @Column(nullable = false)
     private Tipo tipo;
 
+    @Enumerated(STRING)
     @Column(nullable = false)
     private Situacao situacao = Situacao.ATRIBUIDA;
 

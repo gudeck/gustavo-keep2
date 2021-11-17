@@ -134,6 +134,9 @@ spring:
   output:
     ansi:
       console-available: true
+  cloud:
+    stream:
+      source: tarefaReminder
 
 server:
   servlet:

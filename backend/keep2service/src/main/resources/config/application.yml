@@ -166,6 +166,18 @@ spring:
   cloud:
     stream:
       source: mailProvider
+      function:
+        definition: tarefaReminder
+      bindings:
+        tarefaReminder-in-0:
+          group: keep2mail
+          destination: tarefaReminder-out-0
+      rabbit:
+        bindings:
+          tarefaReminder-in-0:
+            consumer:
+              auto-bind-dlq: true
+
 
 server:
   servlet:
